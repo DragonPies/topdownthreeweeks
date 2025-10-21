@@ -5,17 +5,20 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class TopDownMovement : MonoBehaviour
 {
-    public float walkspeed = 5f;
-    public float runspeed = 10f;
+    [SerializeField] private float walkspeed = 5f;
+    [SerializeField] private float runspeed = 10f;
 
     private float currentSpeed;
-    private Vector2 movement;
+   private Vector2 movement;
     private Rigidbody2D rb2D;
+
+    [HideInInspector] public Vector2 direction;
 
     void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
         currentSpeed = walkspeed;
+        direction = Vector2.down;
     }
 
     void Start()
@@ -31,7 +34,13 @@ public class TopDownMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext ctx)
     {
         movement = ctx.ReadValue<Vector2>();
+
+        if (ctx.ReadValue<Vector2>() != Vector2.zero)
+        {
+            direction = ctx.ReadValue<Vector2>();
+        }
     }
+
 
     public void Run(InputAction.CallbackContext ctx)
     {
