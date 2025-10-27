@@ -7,11 +7,27 @@ public class SpawnHitbox : MonoBehaviour
     public LayerMask attackLayer;
 
     private TopDownMovement topDown;
+    private ManaDrain manaDrain;
+    private Stats currentStats;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         topDown = GetComponent<TopDownMovement>();
+    }
+
+    private void Update()
+    {
+        if (TryGetComponent(out ManaDrain manaDrains))
+        {
+            manaDrain = manaDrains;
+        }
+        if (TryGetComponent(out Stats stats))
+        {
+            currentStats = stats;
+        }
     }
 
     private void OnValidate()
@@ -31,7 +47,7 @@ public class SpawnHitbox : MonoBehaviour
         { 
             Debug.Log(hit.collider.gameObject.name);
             
-            if (hit.collider.TryGetComponent(out Stats targetStats) && TryGetComponent(out Stats playerStats))
+            if (hit.collider.TryGetComponent(out Stats targetStats) && TryGetComponent(out Stats playerStats) && (currentStats.currentMana >= manaDrain.manaDrainAmount))
             {
                float calculatedDamage = playerStats.damage - targetStats.defense;
                 targetStats.currentHealth -= calculatedDamage;

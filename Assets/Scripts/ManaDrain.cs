@@ -9,14 +9,25 @@ public class ManaDrain : MonoBehaviour
 
      public float manaDrainAmount = 10f;
 
-
-     public void Manadrain(InputAction.CallbackContext ctx)
+    private void Update()
     {
-             {
-            ctx.ReadValue<float>();
+        if (TryGetComponent(out Stats stats))
+        {
+            currentStats = stats;
+        }
+        if (Input.GetMouseButtonDown(0) && (currentStats.currentMana >= manaDrainAmount))
+        {
+         
             currentStats.currentMana -= manaDrainAmount;
-             }
+            Debug.Log("Mana Drained");
+        }
+    }
 
-     }
+
+
+
+
+
+
 
 }
