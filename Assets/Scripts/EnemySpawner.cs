@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab; // The enemy prefab to spawn
+    public GameObject enemy; // The enemy prefab to spawn
     public float spawnInterval = 2f; // Time interval between spawns
     private float timer;
 
@@ -18,6 +18,6 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, transform.position, transform.rotation);
+        Instantiate(enemy, transform.position, transform.rotation);
     }
 }

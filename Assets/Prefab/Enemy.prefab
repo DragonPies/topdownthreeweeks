@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6611380373938012472}
   - component: {fileID: 4123841961955759035}
   - component: {fileID: 944468773449086082}
-  - component: {fileID: 114741391840500722}
   - component: {fileID: 5406576518030621941}
   - component: {fileID: 1486327948661446217}
   - component: {fileID: 8941318277381186490}
+  - component: {fileID: 9101641188881839556}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
@@ -138,21 +138,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114741391840500722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790415724550581848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd89bcc4f7f67534089b28e7084610f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPrefab: {fileID: 3788403931019274299, guid: a491d3ca82d8716439a1546b9a71dcec, type: 3}
-  speed: 0.5
-  offset: {x: 0, y: 0, z: 0}
 --- !u!50 &5406576518030621941
 Rigidbody2D:
   serializedVersion: 5
@@ -214,3 +199,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1790415724550581848}
   coolDown: 1
+--- !u!114 &9101641188881839556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790415724550581848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd89bcc4f7f67534089b28e7084610f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 1
+  offset: {x: 0, y: 0, z: 0}

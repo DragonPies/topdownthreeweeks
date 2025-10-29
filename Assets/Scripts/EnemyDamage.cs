@@ -17,7 +17,7 @@ public class EnemyDamage : MonoBehaviour
         currentStats = collision.gameObject.GetComponent<Stats>();
 
         timer = coolDown;
-        currentStats.currentHealth -= damage - currentStats.defense;
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
