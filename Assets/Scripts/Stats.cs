@@ -3,13 +3,20 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 
 {
+
+
     [Header("Health & Mana Bars")]
 
-    [Tooltip("This Entity's Max Heath.")][Range (1, 100)] public float maxHealth;
+    [Tooltip("This Entity's Max Heath.")][Range (1, 1000)] public float maxHealth;
     [HideInInspector] public float currentHealth;
 
-    [Tooltip("This Entity's Max Mana.")][Range(0,50)] public float maxMana;
+    [Tooltip("This Entity's Max Mana.")][Range(0,500)] public float maxMana;
     [HideInInspector] public float currentMana;
+    [Header("Experience & Leveling")]
+    [Tooltip("This Entity's Level.")] public float expToNextLevel;
+        [HideInInspector] public float currentExp;
+
+
 
     [Header("Attack")]
 
@@ -34,7 +41,9 @@ public class Stats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            isDead = true;
         }
+
 
         if (currentMana > maxMana)
             currentMana = maxMana;

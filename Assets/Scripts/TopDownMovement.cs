@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,13 @@ public class TopDownMovement : MonoBehaviour
     private Rigidbody2D rb2D;
 
     [HideInInspector] public Vector2 direction;
+
+    public SpriteRenderer spriteRenderer;
+    public Sprite FacingUp;
+    public Sprite FacingDown;
+    public Sprite FacingLeft;
+    public Sprite FacingRight;
+
 
     void Awake()
     {
@@ -29,6 +37,29 @@ public class TopDownMovement : MonoBehaviour
     void Update()
     {
         rb2D.linearVelocity = movement * currentSpeed;
+
+       
+    }
+
+    private void FixedUpdate()
+    {
+        // Handle sprite direction
+        if (direction == Vector2.up)
+        {
+            spriteRenderer.sprite = FacingUp;
+        }
+        else if (direction == Vector2.down)
+        {
+            spriteRenderer.sprite = FacingDown;
+        }
+        else if (direction == Vector2.left)
+        {
+            spriteRenderer.sprite = FacingLeft;
+        }
+        else if (direction == Vector2.right)
+        {
+            spriteRenderer.sprite = FacingRight;
+        }
     }
 
     public void Move(InputAction.CallbackContext ctx)
@@ -53,6 +84,7 @@ public class TopDownMovement : MonoBehaviour
             currentSpeed = walkspeed;
         }
     }
+
 
 }
 

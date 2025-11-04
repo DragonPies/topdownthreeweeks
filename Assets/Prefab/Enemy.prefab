@@ -177,11 +177,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c309ca75cd2b14e886d68b6d51fbf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  targetObject: {fileID: 0}
+  maxHealth: 50
   currentHealth: 0
   maxMana: 0
   currentMana: 0
-  damage: 10
+  expToNextLevel: 0
+  expGained: 5
+  currentExp: 0
+  damage: 25
   defense: 10
   currency: 0
   isDead: 0
