@@ -11,7 +11,8 @@ public class EnemySpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
-            SpawnEnemy();
+            for (int i = 0; i < 3; i++)
+                SpawnEnemy();
             timer = 0f;
         }
     }
