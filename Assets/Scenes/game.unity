@@ -50372,8 +50372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e06d4df7b2a644e85afefd4384b2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1790415724550581848, guid: 93ab5bf2de77d934dbc0ededefa9499e, type: 3}
-  spawnInterval: 5
+  startingEnemy: {fileID: 1790415724550581848, guid: 93ab5bf2de77d934dbc0ededefa9499e, type: 3}
+  enemy: {fileID: 0}
+  stats: {fileID: 0}
 --- !u!4 &1452381106
 Transform:
   m_ObjectHideFlags: 0
@@ -50665,7 +50666,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeValue: 60
-  timeText: {fileID: 0}
   stats: {fileID: 1857856551}
   healthIncrease: 1.5
   damageIncrease: 1.2

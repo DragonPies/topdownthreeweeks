@@ -4,7 +4,6 @@ using UnityEngine;
 public class LevelUp : MonoBehaviour
 {
     public float timeValue = 60f;
-    public TextMeshProUGUI timeText;
     public Stats stats;
 
     [Header("Stats Increase Per Level")]
@@ -28,20 +27,9 @@ public class LevelUp : MonoBehaviour
             stats.damage *= damageIncrease;
             stats.defense *= defenseIncrease;
         }
-        DisplayTime(timeValue);
+     
     }
 
-    void DisplayTime(float timeToDisplay)
-    {
-        if (timeToDisplay < 0)
-        {
-            timeToDisplay += 60f;
-        }
 
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-
-        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-    }
+    
 }

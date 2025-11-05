@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 5406576518030621941}
   - component: {fileID: 1486327948661446217}
   - component: {fileID: 8941318277381186490}
-  - component: {fileID: 9101641188881839556}
+  - component: {fileID: 3399254899138471793}
   m_Layer: 3
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.008228302, y: -0.00000047683716}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,7 +136,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.411377, y: 1.3620119}
   m_EdgeRadius: 0
 --- !u!50 &5406576518030621941
 Rigidbody2D:
@@ -177,18 +177,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c309ca75cd2b14e886d68b6d51fbf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 0}
   maxHealth: 50
   currentHealth: 0
   maxMana: 0
   currentMana: 0
   expToNextLevel: 0
-  expGained: 5
   currentExp: 0
   damage: 25
   defense: 10
   currency: 0
   isDead: 0
+  coolDown: 6
 --- !u!114 &8941318277381186490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1790415724550581848}
   coolDown: 1
---- !u!114 &9101641188881839556
+--- !u!114 &3399254899138471793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,9 +211,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1790415724550581848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd89bcc4f7f67534089b28e7084610f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7def023c29920f344bcbf89d2cdae198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 1
-  offset: {x: 0, y: 0, z: 0}
+  moveSpeed: 2
+  detectionRange: 100

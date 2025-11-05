@@ -29,6 +29,9 @@ public class Stats : MonoBehaviour
 
     [Tooltip("is this entity alive?")] public bool isDead;
 
+    private float timer;
+    public float coolDown = 1f;
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -38,10 +41,18 @@ public class Stats : MonoBehaviour
 
     private void Update()
     {
+        
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            timer -= Time.deltaTime;
             isDead = true;
+            if (isDead == true)
+            {
+                Destroy(gameObject);
+                timer = coolDown;
+            }
+            
+            
         }
 
 
