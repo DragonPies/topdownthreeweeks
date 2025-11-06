@@ -3,20 +3,16 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject startingEnemy; // The initial enemy prefab to spawn
-    public float coolDown = 5f;
+    public float coolDown = 2f;
 
     private float timer;
     private int spawnCount = 1;
     private int spawner = 1;
-    private float difficultyMultiplier = 1.2f;
+    private float difficultyMultiplier = 1.35f;
 
     private void Start()
     {
         timer = coolDown;
-        for (int i = 0; i < 1; i++)
-        {
-            SpawnEnemy();
-        }
     }
 
     void Update()

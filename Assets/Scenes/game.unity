@@ -384,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942551152450271797, guid: a491d3ca82d8716439a1546b9a71dcec, type: 3}
       propertyPath: manaDrainAmount
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8028422568611547968, guid: a491d3ca82d8716439a1546b9a71dcec, type: 3}
       propertyPath: coolDown
@@ -396,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8321163554326604381, guid: a491d3ca82d8716439a1546b9a71dcec, type: 3}
       propertyPath: coolDown
-      value: 0.1
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8321163554326604381, guid: a491d3ca82d8716439a1546b9a71dcec, type: 3}
       propertyPath: manaRegenAmount
@@ -50373,7 +50373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingEnemy: {fileID: 1790415724550581848, guid: 93ab5bf2de77d934dbc0ededefa9499e, type: 3}
-  coolDown: 5
+  coolDown: 3
 --- !u!4 &1452381106
 Transform:
   m_ObjectHideFlags: 0
