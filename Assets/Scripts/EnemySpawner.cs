@@ -3,40 +3,39 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject startingEnemy; // The initial enemy prefab to spawn
-    public GameObject enemy; // The enemy prefab to spawn
-    public Stats stats; // Reference to the Stats script
+    public float coolDown = 5f;
 
+    private float timer;
     private int spawnCount = 1;
+    private int spawner = 1;
+    private float difficultyMultiplier = 1.2f;
 
     private void Start()
     {
-        Instantiate(startingEnemy, transform.position, transform.rotation);
-        if (enemy == null && stats == null)
+        timer = coolDown;
+        for (int i = 0; i < 1; i++)
         {
-            enemy = GameObject.FindWithTag("Enemy");
-            stats = enemy.GetComponent<Stats>();
+            SpawnEnemy();
         }
     }
 
     void Update()
     {
-        
+        timer -= Time.deltaTime;
 
-        if (stats.isDead == true ) {
-            Debug.Log("Enemy is Dead");
+        if (timer <= 0) { 
             for (int i = 0; i < spawnCount; i++)
             {
-                Debug.Log("Enemy is spawning");
                 SpawnEnemy();
-                spawnCount++;
             }
-                
-            
+            spawnCount += spawner;
+            timer = coolDown *= difficultyMultiplier;
+
         }
     }
 
     void SpawnEnemy()
     {
-        Instantiate(enemy, transform.position, transform.rotation);
+        Instantiate(startingEnemy, transform.position, transform.rotation);
     }
 }

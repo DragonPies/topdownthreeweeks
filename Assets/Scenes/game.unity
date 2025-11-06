@@ -384,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942551152450271797, guid: a491d3ca82d8716439a1546b9a71dcec, type: 3}
       propertyPath: manaDrainAmount
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8028422568611547968, guid: a491d3ca82d8716439a1546b9a71dcec, type: 3}
       propertyPath: coolDown
@@ -50373,8 +50373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingEnemy: {fileID: 1790415724550581848, guid: 93ab5bf2de77d934dbc0ededefa9499e, type: 3}
-  enemy: {fileID: 0}
-  stats: {fileID: 0}
+  coolDown: 5
 --- !u!4 &1452381106
 Transform:
   m_ObjectHideFlags: 0
